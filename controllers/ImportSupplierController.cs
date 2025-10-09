@@ -21,7 +21,14 @@ namespace backend.controllers
                                 ?? throw new InvalidOperationException("Connection String not found");
             _logger = logger;
         }
-
+        [HttpGet]
+        public IActionResult Test()
+        {
+            var origin = Request.Headers["Origin"].ToString();
+            Console.WriteLine($"Incoming Origin: {origin}");
+            return Ok("CORS test");
+        }
+    
         [HttpPost("importcsv")]
         public IActionResult ImportCsv(IFormFile file)
         {
