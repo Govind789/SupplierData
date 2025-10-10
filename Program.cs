@@ -12,10 +12,10 @@ builder.Services.AddCors(options =>
             "http://localhost:5173"
         )
         .AllowAnyMethod()
-        .WithHeaders()
+        .AllowAnyHeader()
         .AllowCredentials();
     });
-});
+}); 
 
 builder.Services.AddControllers();
 var app = builder.Build();

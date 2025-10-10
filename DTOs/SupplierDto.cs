@@ -10,7 +10,7 @@ namespace backend.DTOs
         public string Address { get; set; } = null!;
         public string City { get; set; } = null!;
         public string State { get; set; } = null!;
-        public int Postal_Code { get; set; }
+        public string Postal_Code { get; set; } = null!;
         public string Country { get; set; } = null!;
         public string Tax_Identification { get; set; } = null!;
     }
