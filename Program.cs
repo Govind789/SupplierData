@@ -9,7 +9,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowLocalHostFrontend", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:5173"
+            "http://localhost:5173",
+            "https://supplierdata1.netlify.app",
+            "https://supplier-data-frontend-col9n4cik-govind789s-projects.vercel.app",
+            "https://supplierdatafrontend.onrender.com"
         )
         .AllowAnyMethod()
         .AllowAnyHeader()
@@ -20,11 +23,11 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+// }
 
 app.UseRouting();
 
